@@ -2,32 +2,42 @@
 <html>
   <head>
     <title>MNIST</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <style>
+          body {
+              font-family: Avenir Next;
+          }
+          .regression {
+              color: coral;
+          }
+          .convolutional {
+              color: cornflowerblue;
+          }
+      </style>
   </head>
   <body>
     <a href="https://github.com/sugyan/tensorflow-mnist"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
     <div class="container">
-      <h1>MNIST</h1>
+      <h1 class="display-1">MNIST<p class="lead">Modified National Institute of Standards and Technology</p></h1>
       <div class="row">
         <div class="col-md-6">
-          <p>draw a digit here!</p>
+          <h3>Draw a digit here!</h3>
           <canvas id="main"></canvas>
           <p>
             <button id="clear" class="btn btn-default">clear</button>
           </p>
         </div>
-        <div class="col-md-6">
-          <p>input:</p>
+        <div class="col-md-2">
+          <h3>Input:</h3>
           <canvas id="input" style="border:1px solid" width="140" height="140"></canvas>
-          <hr>
-          <p>output:</p>
-          <table id="output" class="table">
+        </div>
+          <div class="col-md-4">
+          <h3>Output:</h3>
+          <table id="output" class="table table-sm">
             <tr>
               <th class="col-md-1"></th>
-              <th class="col-md-2">regression</th>
-              <th class="col-md-2">convolutional</th>
+              <th class="col-md-2 regression">REGRESSION</th>
+              <th class="col-md-2 convolutional">CONVOLUTIONAL</th>
             </tr>
             <tr>
               <th>0</th>
@@ -80,8 +90,12 @@
               <td></td>
             </tr>
           </table>
-        </div>
+          </div>
       </div>
     </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>
